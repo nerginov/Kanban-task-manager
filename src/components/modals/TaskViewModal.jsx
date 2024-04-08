@@ -15,6 +15,7 @@ const TaskViewModal = ({
   currentStatus,
   statuses,
   subTasks,
+  task,
 }) => {
   const { data, setData, activeBoard, setActiveTaskName } =
     useContext(appContext);
@@ -112,6 +113,7 @@ const TaskViewModal = ({
             <EditModal
               className={styles["task-edit"]}
               target="task"
+              task={task}
             ></EditModal>
           )}
         </header>

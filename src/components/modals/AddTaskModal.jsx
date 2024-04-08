@@ -5,7 +5,7 @@ import ModalWrapper from "./modalwrapper/ModalWrapper";
 import { appContext } from "../../context/context";
 import { useContext } from "react";
 
-const AddTaskModal = ({ type }) => {
+const AddTaskModal = () => {
   const { activeBoard, data, setData, closeModal } = useContext(appContext);
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
@@ -97,7 +97,7 @@ const AddTaskModal = ({ type }) => {
 
   return (
     <ModalWrapper>
-      <h2>{type === "add" ? "Add New Task" : "Edit Task"}</h2>
+      <h2>Add New Task</h2>
       <form
         action=""
         className={styles["add-task-form"]}
@@ -175,7 +175,7 @@ const AddTaskModal = ({ type }) => {
           className={styles["add-task-form__task-create-button"]}
           disabled={!status || status.trim() === ""}
         >
-          {type === "add" ? "Create Task" : "Save Changes"}
+          Create Task
         </button>
       </form>
     </ModalWrapper>

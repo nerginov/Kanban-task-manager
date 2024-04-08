@@ -12,6 +12,7 @@ import EditBoardModal from "../../components/modals/EditBoardModal";
 import DeleteModal from "../../components/modals/DeleteModal";
 import EditModal from "../../components/modals/EditModal";
 import AddTaskModal from "../modals/AddTaskModal";
+import EditTaskModal from "../modals/EditTaskModal";
 
 const Header = () => {
   const windowWidth = useWindowResize();
@@ -77,24 +78,22 @@ const Header = () => {
           )
         : activeModal === "editTask"
         ? createPortal(
-            <AddTaskModal type={"edit"} />,
+            <EditTaskModal type={"edit"} />,
             document.getElementById("root")
           )
         : null}
 
-      {
-        activeModal === "delete"
-          ? createPortal(
-              <DeleteModal title={activeBoard.name} type="board" />,
-              document.getElementById("root")
-            )
-          : activeModal === "deleteTask"
-          ? createPortal(
-              <DeleteModal title={activeTaskName} type="task" />,
-              document.getElementById("root")
-            )
-          : null // You might want to handle other cases if needed
-      }
+      {activeModal === "delete"
+        ? createPortal(
+            <DeleteModal title={activeBoard.name} type="board" />,
+            document.getElementById("root")
+          )
+        : activeModal === "deleteTask"
+        ? createPortal(
+            <DeleteModal title={activeTaskName} type="task" />,
+            document.getElementById("root")
+          )
+        : null}
     </>
   );
 };

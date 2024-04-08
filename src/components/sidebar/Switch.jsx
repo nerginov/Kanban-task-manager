@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Switch.module.scss";
 import darkIcon from "../../assets/icon-dark-theme.svg";
 import lightIcon from "../../assets/icon-light-theme.svg";
@@ -6,15 +6,13 @@ import lightIcon from "../../assets/icon-light-theme.svg";
 const Switch = () => {
   const [theme, setTheme] = useState("light");
 
-  const handleThemeSwitch = () => {
+  useEffect(() => {
     const root = document.documentElement;
-    if (theme === "light") {
-      root.setAttribute("data-theme", "theme-dark");
-      setTheme("dark");
-    } else {
-      root.setAttribute("data-theme", "theme-light");
-      setTheme("light");
-    }
+    root.setAttribute("data-theme", `theme-${theme}`);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (
@@ -24,7 +22,8 @@ const Switch = () => {
         <input
           type="checkbox"
           id="switch"
-          onClick={() => handleThemeSwitch()}
+          checked={theme === "dark"}
+          onChange={toggleTheme}
         ></input>
         <span className={styles["slider"]}></span>
       </label>

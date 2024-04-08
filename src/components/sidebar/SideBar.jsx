@@ -12,7 +12,8 @@ import { createPortal } from "react-dom";
 
 const SideBar = () => {
   const windowWidth = useWindowResize();
-  const { boardNames, activeBoard, handleActiveBoard,activeModal,openModal } = useContext(appContext);
+  const { boardNames, activeBoard, handleActiveBoard, activeModal, openModal } =
+    useContext(appContext);
 
   // Set initial active board button index
   useEffect(() => {
@@ -33,58 +34,58 @@ const SideBar = () => {
 
   return (
     <>
-    <aside>
-      <div className={styles["sidebar-content"]}>
-        {windowWidth > 767 ? (
-          <div className={styles["logo-container"]}>
-            <img src={logoDesktopDark} alt="" />
-          </div>
-        ) : (
-          ""
-        )}
-
-        <div className={styles.boards}>
-          <h2 className={styles["boards__title"]}>
-            ALL BOARDS ({boardNames ? boardNames.length : "0"})
-          </h2>
-          {boardNames &&
-            boardNames.map((name, index) => (
-              <button
-                key={index}
-                className={`${styles["boards__board-button"]} ${
-                  clickedButtonIndex === index &&
-                  styles["boards__board-button--active"]
-                }`}
-                onClick={() => {
-                  handleBoardButton(index);
-                  handleActiveBoard(name);
-                }}
-              >
-                <img src={boardIcon} alt="board icon" /> {name}
-              </button>
-            ))}
-          <button
-            className={`${styles["boards__board-button"]} ${styles["boards__board-button--create"]}`}onClick={()=>openModal('createBoard')}
-          >
-            <img src={boardIcon} alt="board icon" 
-            /> + Create New Board
-          </button>
-        </div>
-
-        <div className={styles["additional-actions"]}>
-          <Switch></Switch>
+      <aside>
+        <div className={styles["sidebar-content"]}>
           {windowWidth > 767 ? (
-            <button className={styles["additional-actions__hide-button"]}>
-              <img src={hideIcon} alt="hide icon" /> Hide Sidebar
-            </button>
+            <div className={styles["logo-container"]}>
+              <img src={logoDesktopDark} alt="" />
+            </div>
           ) : (
-            " "
+            ""
           )}
+
+          <div className={styles.boards}>
+            <h2 className={styles["boards__title"]}>
+              ALL BOARDS ({boardNames ? boardNames.length : "0"})
+            </h2>
+            {boardNames &&
+              boardNames.map((name, index) => (
+                <button
+                  key={index}
+                  className={`${styles["boards__board-button"]} ${
+                    clickedButtonIndex === index &&
+                    styles["boards__board-button--active"]
+                  }`}
+                  onClick={() => {
+                    handleBoardButton(index);
+                    handleActiveBoard(name);
+                  }}
+                >
+                  <img src={boardIcon} alt="board icon" /> {name}
+                </button>
+              ))}
+            <button
+              className={`${styles["boards__board-button"]} ${styles["boards__board-button--create"]}`}
+              onClick={() => openModal("createBoard")}
+            >
+              <img src={boardIcon} alt="board icon" /> + Create New Board
+            </button>
+          </div>
+
+          <div className={styles["additional-actions"]}>
+            <Switch></Switch>
+            {windowWidth > 767 ? (
+              <button className={styles["additional-actions__hide-button"]}>
+                <img src={hideIcon} alt="hide icon" /> Hide Sidebar
+              </button>
+            ) : (
+              " "
+            )}
+          </div>
         </div>
-      </div>
-    </aside>
-    {activeModal === "createBoard" &&
-    createPortal(<CreateBoard />, document.getElementById("root"))}
+      </aside>
+      {activeModal === "createBoard" &&
+        createPortal(<CreateBoard />, document.getElementById("root"))}
     </>
   );
 };

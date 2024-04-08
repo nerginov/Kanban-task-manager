@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 import DeleteModal from "../modals/DeleteModal";
 
 const Task = ({
+  task,
   taskTitle,
   subTasks,
   totalSubTasks,
@@ -34,6 +35,7 @@ const Task = ({
       {activeModal === taskTitle &&
         createPortal(
           <TaskViewModal
+            task={task}
             taskTitle={taskTitle}
             taskDescription={taskDescription}
             taskStatus={taskStatus}

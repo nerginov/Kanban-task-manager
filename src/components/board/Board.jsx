@@ -22,6 +22,7 @@ const Board = () => {
                 {column.tasks &&
                   column.tasks.map((task) => (
                     <Task
+                      task={task}
                       key={task.title}
                       openModal={openModal}
                       taskTitle={task.title}
