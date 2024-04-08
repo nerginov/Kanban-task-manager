@@ -1,0 +1,47 @@
+@use "../../mixins.module.scss";
+.create-board{
+    &__form{
+        label,legend{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        input{
+            font-size: 1.4rem;
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+        }
+       .column-input{
+        input{margin-right: 1rem;
+        margin-bottom: 0rem;}
+        width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+        .add-column-button{
+       
+                width: 100%;
+                border-radius: 2.5rem;
+                margin-bottom: 2rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+                background: var(--secondary-color);
+                color: var(--primary-color);
+              
+        }
+        .create-board-button {
+            width: 100%;
+            border-radius: 2.5rem;
+            padding-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: var(--primary-color);
+            color: var(--white-color);
+          }
+        
+    }
+}

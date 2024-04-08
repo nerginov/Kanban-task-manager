@@ -1,0 +1,64 @@
+@use "../../mixins.module.scss";
+.edit-board {
+  label {
+    color: var(--grey-text);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .edit-board__name-input {
+    font-size: 1.2rem;
+    color: var(--primary-text);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .edit-board__add-button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  .edit-board__save-button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background: var(--primary-color);
+    color: var(--white-color);
+    margin-bottom: 1rem;
+  }
+
+  fieldset {
+    legend {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      input {
+        font-size: 1.2rem;
+        color: var(--primary-text);
+        margin-right: 1rem;
+      }
+    }
+
+    label {
+      visibility: hidden;
+      margin: 0;
+      height: 0;
+      width: 0;
+    }
+  }
+}

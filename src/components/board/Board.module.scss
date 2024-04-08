@@ -1,0 +1,23 @@
+.board {
+  padding: 2rem 4rem;
+
+  overflow: auto;
+  background: var(--main-background);
+  div {
+    gap: 3rem;
+    background: var(--main-background);
+
+    display: flex;
+
+    .board__column-add-button {
+      height: calc(100vh - 14.5rem);
+      min-width: 27rem;
+      border-radius: 1rem;
+      background: var(--add-column-background);
+      color: var(--grey-text);
+      margin-top: 4.5rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+  }
+}

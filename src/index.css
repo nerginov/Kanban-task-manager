@@ -1,0 +1,25 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  #root {
+    display: grid;
+  }
+  *,
+  *:before,
+  *:after {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}

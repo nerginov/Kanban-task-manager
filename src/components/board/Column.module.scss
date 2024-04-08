@@ -1,0 +1,15 @@
+.column {
+  flex: 0 0 auto; //prevents shrinking
+  display: flex;
+  max-width: 27rem;
+  min-width: 27rem;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--grey-text);
+  }
+}

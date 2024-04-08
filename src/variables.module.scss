@@ -1,0 +1,36 @@
+:root {
+  //Generic styles
+  --primary-color: hsl(242 48% 58%);
+  --primary-color-hover: hsl(243 100% 82%);
+  --grey-text: hsl(216 15% 57%);
+  --white-color: hsl(0 0% 100%);
+  --box-shadow: 2px 4px 6px hsl(220, 40%, 35%, 0.1);
+  --red-color: hsl(0 78% 63%);
+  --red-color-hover: hsl(0 100% 80%);
+}
+:root[data-theme="theme-light"] {
+  // Default theme
+  --main-background: hsl(220 69% 97%);
+  --header-background: hsl(0 0% 100%);
+  --aside-background: hsl(0 0% 100%);
+  --add-column-background: hsl(219 63% 95%);
+
+  --secondary-color: rgba(99, 95, 199, 0.1);
+  --secondary-color-hover: rgba(99, 95, 199, 0.25);
+
+  --primary-text: hsl(237 100% 4%);
+  --lines-color: hsl(221 69% 94%);
+  // hsl(221 69% 94%)
+}
+
+:root[data-theme="theme-dark"] {
+  // Dark theme
+  --main-background: hsl(235 16% 15%);
+  --header-background: hsl(235 12% 19%);
+  --aside-background: hsl(235 12% 19%);
+  --secondary-color: hsl(0 0% 100%);
+  --secondary-color-hover: hsl(0 0% 90%);
+  --lines-color: hsl(236 11% 27%);
+  --primary-text: hsl(0 0% 100%);
+  --add-column-background: hsl(235 12% 19%);
+}

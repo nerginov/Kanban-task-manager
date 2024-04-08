@@ -1,0 +1,23 @@
+@use "./mixins.module.scss";
+@use "./variables.module.scss";
+
+html {
+  background: var(--main-background);
+  overflow: hidden;
+}
+#root {
+  display: grid;
+}
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  // max-height: 100%;
+  background: var(--board-background);
+
+  @include mixins.media(tablet) {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 25.7rem auto;
+  }
+}

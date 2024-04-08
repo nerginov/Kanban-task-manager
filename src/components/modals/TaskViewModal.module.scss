@@ -1,0 +1,62 @@
+@use "../../mixins.module.scss";
+
+.task-view {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__description {
+    p {
+      color: var(--grey-text);
+      font-size: 1.4rem;
+      line-height: 20px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__subtasks {
+    border: none;
+
+    legend {
+      color: var(--grey-text);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    div:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+
+    div {
+      display: flex;
+      gap: 2rem;
+      justify-content: left;
+      align-items: center;
+      background: var(--main-background);
+      border-radius: 0.5rem;
+      padding: 1rem 1.5rem;
+
+      label {
+        color: var(--primary-text);
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      input {
+        width: max-content;
+      }
+    }
+  }
+
+  &__status-label {
+    color: var(--grey-text);
+    font-size: 1.2rem;
+
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+}

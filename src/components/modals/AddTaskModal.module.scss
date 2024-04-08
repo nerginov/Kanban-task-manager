@@ -1,0 +1,79 @@
+@use "../../mixins.module.scss";
+
+.add-task-form {
+  textarea {
+    overflow-y: scroll;
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--lines-color);
+    font-size: 1.4rem;
+    color: var(--primary-text);
+    background: var(--aside-background);
+
+    &::placeholder {
+      color: var(--grey-text);
+    }
+  }
+
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    font-size: 1.4rem;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+  }
+
+  &__task-create-button {
+    width: 100%;
+    border-radius: 2.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
+
+  fieldset {
+    legend {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      visibility: hidden;
+      font-size: 1.2rem;
+      height: 0;
+      width: 0;
+    }
+
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      input {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .add-task-form__subtask-add-button {
+      width: 100%;
+      border-radius: 2.5rem;
+      margin-bottom: 2rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: var(--secondary-color);
+      color: var(--primary-color);
+    }
+  }
+}

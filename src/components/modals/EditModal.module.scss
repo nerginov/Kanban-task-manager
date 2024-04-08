@@ -1,0 +1,26 @@
+.edit-modal {
+  position: absolute;
+  width: 18rem;
+  top: 8.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+
+  background: var(--aside-background);
+  box-shadow: var(--box-shadow);
+
+  &__button {
+    text-align: left;
+    font-size: 1.4rem;
+    &--edit {
+      color: var(--grey-text);
+    }
+
+    &--delete {
+      color: var(--red-color);
+    }
+  }
+}
